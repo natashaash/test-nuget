@@ -2,7 +2,7 @@
 - task: NuGetCommand@2
   inputs:
     command: 'restore'
-    restoreSolution: '**/*.sln'
+    restoreSolution: '*.sln'
     feedsToUse: 'config'
     nugetConfigPath: 'Nuget.config'
 # Build and test ASP.NET projects.
@@ -16,7 +16,7 @@ pool:
   vmImage: 'windows-latest'
 
 variables:
-  solution: '**/*.sln'
+  solution: '*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
