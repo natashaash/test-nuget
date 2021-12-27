@@ -29,11 +29,6 @@ jobs:
       restoreSolution: '*.sln'
       feedsToUse: config
       nugetConfigPath: 'NuGet.config'
-  - task: VSBuild@1
-    displayName: Build solution
-    inputs:
-      solution: $(BuildParameters.solution)
-      msbuildArgs: /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactstagingdirectory)\\"
-      platform: $(BuildPlatform)
-      configuration: $(BuildConfiguration)
-...
+ - task: MSBuild@1
+   inputs:
+     solution: '*.sln'
