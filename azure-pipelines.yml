@@ -1,6 +1,6 @@
 variables:
 - name: BuildParameters.solution
-  value: '**\*.sln'
+  value: '*.sln'
 - name: BuildParameters.ArtifactName
   value: drop
 trigger:
