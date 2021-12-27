@@ -24,11 +24,11 @@ jobs:
     inputs:
       solution: $(BuildParameters.solution)
   - task: NuGetCommand@2
-    displayName: NuGet restore devexpress
     inputs:
-      solution: $(BuildParameters.solution)
-      selectOrConfig: config
-      nugetConfigPath: NuGet.config
+      command: 'restore'
+      restoreSolution: '*.sln'
+      feedsToUse: 'config'
+      nugetConfigPath: 'NuGet.config'
   - task: VSBuild@1
     displayName: Build solution
     inputs:
