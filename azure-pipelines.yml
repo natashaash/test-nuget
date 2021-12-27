@@ -26,7 +26,7 @@ jobs:
   - task: NuGetCommand@2
     displayName: NuGet restore devexpress
     inputs:
-      solution: CPD.sln
+      solution: $(BuildParameters.solution)
       selectOrConfig: config
       nugetConfigPath: NuGet.config
   - task: VSBuild@1
