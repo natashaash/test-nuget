@@ -25,11 +25,14 @@ jobs:
       solution: $(BuildParameters.solution)
   - task: NuGetCommand@2
     inputs:
-      command: restore
-      restoreSolution: '*.sln'
-      feedsToUse: config
-      nugetConfigPath: 'NuGet.config'
-   - task: MSBuild@1
-     inputs:
-       solution: '*.sln'
+      command: custom
+      arguments: 'restore $(Build.SourcesDirectory)\MyWebSites1\packages.config -SolutionDirectory $(Build.SourcesDirectory)'
+       
+  - task: VSBuild@1
+    displayName: Build solution
+    inputs:
+      solution: $(BuildParameters.solution)
+      msbuildArgs: /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactstagingdirectory)\\"
+      platform: $(BuildPlatform)
+      configuration: $(BuildConfiguration)
 ...
