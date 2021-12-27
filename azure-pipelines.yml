@@ -29,6 +29,7 @@ jobs:
       restoreSolution: '*.sln'
       feedsToUse: config
       nugetConfigPath: 'NuGet.config'
- - task: MSBuild@1
-   inputs:
-     solution: '*.sln'
+   - task: MSBuild@1
+     inputs:
+       solution: '*.sln'
+...
