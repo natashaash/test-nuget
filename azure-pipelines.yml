@@ -30,7 +30,7 @@ jobs:
       command: custom
       arguments: restore $(Build.SourcesDirectory)\MyWebSites1\packages.config -SolutionDirectory $(Build.SourcesDirectory)
       noCache: true
-      restoreDirectory: '../packages'
+      restoreDirectory: '../packages1'
  
   
   - task: VSBuild@1
