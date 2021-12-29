@@ -28,7 +28,7 @@ jobs:
   - task: NuGetCommand@2
     inputs:
       command: 'restore'
-      restoreSolution: '$(Build.SourcesDirectory)\MyWebSites1\'
+      restoreSolution: '$(Build.SourcesDirectory)\MyWebSites1\packages.config'
       feedsToUse: 'config'
       nugetConfigPath: 'NuGet.config'
       noCache: true
