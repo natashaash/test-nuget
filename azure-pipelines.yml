@@ -24,15 +24,16 @@ jobs:
     displayName: NuGet restore
     inputs:
       solution: $(BuildParameters.solution)
-  - task: NuGetCommand@2
-    displayName: NuGet custom
-    inputs:
-      command: custom
-      arguments: restore $(Build.SourcesDirectory)\MyWebSites1\packages.config -SolutionDirectory $(Build.SourcesDirectory)
-      noCache: true
-      restoreDirectory: '../packages1'
  
-  
+  - task: NuGetCommand@2
+    inputs:
+      command: 'restore'
+      restoreSolution: '$(Build.SourcesDirectory)\MyWebSites1\'
+      feedsToUse: 'config'
+      nugetConfigPath: 'NuGet.config'
+      noCache: true
+      restoreDirectory: '$(Build.SourcesDirectory)\packages'
+
   - task: VSBuild@1
     displayName: Build solution
     inputs:
