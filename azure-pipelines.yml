@@ -41,7 +41,6 @@ jobs:
       msbuildArgs: /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactstagingdirectory)\\"
       platform: $(BuildPlatform)
       configuration: $(BuildConfiguration)
- 
   - task: PublishSymbols@2
     displayName: Publish symbols path
     continueOnError: True
