@@ -39,8 +39,13 @@ jobs:
      SourceFolder: '$(Build.SourcesDirectory)\packages\DevExpress.Web.20.1.4\lib\net452'
      TargetFolder: '$(Build.SourcesDirectory)\MyWebSites1\Bin'
  
+  - task: CopyFiles@2
+    displayName: 'Copy files DevExpress.Web.themes'
+    inputs:
+     SourceFolder: '$(Build.SourcesDirectory)\packages\DevExpress.Web.Themes.20.1.4\lib\net452'
+     TargetFolder: '$(Build.SourcesDirectory)\MyWebSites1\Bin'
 
-  - task: CopyFiles2@2
+  - task: CopyFiles@2
     displayName: 'Copy files DevExpress.Data'
     inputs:
      SourceFolder: '$(Build.SourcesDirectory)\packages\DevExpress.Data.20.1.4\lib\net452'
