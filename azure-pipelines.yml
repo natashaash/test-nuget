@@ -34,6 +34,12 @@ jobs:
       noCache: true
       restoreDirectory: '$(Build.SourcesDirectory)\packages'
 
+  - task: CopyFiles@2
+    displayName: 'Copy files'
+    inputs:
+     SourceFolder: '$(Build.SourcesDirectory)\packages\DevExpress.Web.20.1.4'
+     TargetFolder: '$(Build.SourcesDirectory)\WebSite1\Bin'
+
   - task: VSBuild@1
     displayName: Build solution
     inputs:
