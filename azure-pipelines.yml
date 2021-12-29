@@ -1,4 +1,5 @@
 variables:
+
 - name: BuildParameters.solution
   value: '*.sln'
 - name: BuildParameters.ArtifactName
@@ -28,7 +29,10 @@ jobs:
     inputs:
       command: custom
       arguments: restore $(Build.SourcesDirectory)\MyWebSites1\packages.config -SolutionDirectory $(Build.SourcesDirectory)
+      noCache: true
+      restoreDirectory: '../packages'
  
+  
   - task: VSBuild@1
     displayName: Build solution
     inputs:
