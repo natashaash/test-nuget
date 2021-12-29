@@ -33,11 +33,17 @@ jobs:
       nugetConfigPath: 'NuGet.config'
       noCache: true
       restoreDirectory: '$(Build.SourcesDirectory)\packages'
-
   - task: CopyFiles@2
-    displayName: 'Copy files'
+    displayName: 'Copy files DevExpress.Web'
     inputs:
      SourceFolder: '$(Build.SourcesDirectory)\packages\DevExpress.Web.20.1.4\lib\net452'
+     TargetFolder: '$(Build.SourcesDirectory)\MyWebSites1\Bin'
+ 
+
+  - task: CopyFiles2@2
+    displayName: 'Copy files DevExpress.Data'
+    inputs:
+     SourceFolder: '$(Build.SourcesDirectory)\packages\DevExpress.Data.20.1.4\lib\net452'
      TargetFolder: '$(Build.SourcesDirectory)\MyWebSites1\Bin'
 
   - task: VSBuild@1
