@@ -38,7 +38,7 @@ jobs:
     displayName: 'Copy files'
     inputs:
      SourceFolder: '$(Build.SourcesDirectory)\packages\DevExpress.Web.20.1.4\lib\net452'
-     TargetFolder: '$(Build.SourcesDirectory)\WebSite1\Bin'
+     TargetFolder: '$(Build.SourcesDirectory)\MyWebSites1\Bin'
 
   - task: VSBuild@1
     displayName: Build solution
