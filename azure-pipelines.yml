@@ -27,7 +27,7 @@ jobs:
     displayName: NuGet custom
     inputs:
       command: custom
-      arguments: restore $(Build.SourcesDirectory)\MyWebSite1\packages.config -SolutionDirectory $(Build.SourcesDirectory)
+      arguments: restore $(Build.SourcesDirectory)\MyWebSites1\packages.config -SolutionDirectory $(Build.SourcesDirectory)
   - task: NuGetCommand@2
     displayName: NuGet restore devexpress
     inputs:
